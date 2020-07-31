@@ -13,14 +13,21 @@ function App() {
         <div className='topBar'>
           <div className="barcontent">
             <div className='leftside'>
-              <p> alguns items</p>
+
+              <Link> <item>Contactos</item></Link>
+              <Link> <item>Contactos</item></Link>
+              <Link> <item>Contactos</item></Link>
+              <Link> <item>Contactos</item></Link>
+              
             </div>
             <div className='rightside'></div>
           </div>
         </div>
+
         <header>
           <nav></nav>
         </header>
+
         <div className='container'>
           <Route exact path="/" component={Home} />
           <Route path="/corpo" component={corpo} />
