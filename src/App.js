@@ -9,10 +9,19 @@ function App() {
 
     <Router>
       <div className="App">
-        
-        <div className='container'>
 
-          <header><nav></nav></header>
+        <div className='topBar'>
+          <div className="barcontent">
+            <div className='leftside'>
+              <p> alguns items</p>
+            </div>
+            <div className='rightside'></div>
+          </div>
+        </div>
+        <header>
+          <nav></nav>
+        </header>
+        <div className='container'>
           <Route exact path="/" component={Home} />
           <Route path="/corpo" component={corpo} />
           <Route path="/contact" component={contact} />
