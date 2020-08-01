@@ -9,6 +9,7 @@ import facebook from './images/facebook.png';
 import logo from './images/Logotipo_Manifexto2018.png';
 import Sino from './images/bell.png';
 import user from './images/user.png';
+import { Button, Alert } from 'react-bootstrap';
 
 function App() {
   return (
@@ -38,9 +39,16 @@ function App() {
             <div className='divide'>
               <img src={logo} className='image-logo' />
             </div>
-            <div className='divide'>
 
+            <div className='divide'>
+            
+              <div className='center-box'>
+                <div className='center-top'>1</div>
+                <div className='center-bottom'>2</div>
+              </div>
+              
             </div>
+
             <div className='divide'>
               <div className='images-items'>
                

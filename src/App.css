@@ -31,6 +31,7 @@ body{
 .App-link {
   color: #61dafb;
 }
+
 .container{
   max-width: 160vh;
   box-sizing: border-box;
@@ -43,12 +44,13 @@ header{
   height: 8vh;
   border-bottom: 1px solid rgb(219, 219, 219);
 }
+
 nav{
   max-width: 160vh;
   height: 8vh;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 3fr .7fr;
+  grid-template-columns: 1fr 4fr .4fr;
   column-gap: 5px;
 }
 /* .divide{
@@ -60,16 +62,41 @@ nav{
   max-width: 90%;
   min-width: 10vh;
 }
+
 .divide .images-items{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
+
+.center-box{
+  display: grid;
+  grid-template-columns: .1fr;
+  grid-template-rows: 14fr;
+  /* column-gap: 5px;
+  row-gap: 5px; */
+}
+
+.center-box .center-top{
+  background: #fff;
+  height: 4.7vh;
+  text-align: left;
+  grid-column: 1/4;
+}
+
+.center-box .center-bottom{
+  background: rgb(153, 28, 28);
+  height: 3vh;
+  text-align: left;
+  grid-column: 1/4;
+}
+
 .btn-alertas{
   padding-top: 10px;
   width: 6vh;
   grid-column: 5/6;
   color: #fff;
 }
+
 .btn-alertas img{
   width: 4vh;
 }
@@ -80,11 +107,10 @@ nav{
   grid-column: 6/7;
   color: #fff;
 }
+
 .btn-conta img{
     width: 4vh;
 }
-
-
 
 .topBar{
   background: rgb(45, 210, 124);
@@ -127,6 +153,8 @@ nav{
 item img{
   width: 2.3vh;
 }
+
+
 
 
 
