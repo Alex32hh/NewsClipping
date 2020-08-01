@@ -44,6 +44,7 @@ function App() {
             <div className='divide'>
               <div className='images-items'>
                
+                
                 <div className='btn-alertas'>
                   <Link>
                   <img src={Sino} />
