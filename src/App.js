@@ -43,15 +43,20 @@ function App() {
             </div>
             <div className='divide'>
               <div className='images-items'>
-                
+               
                 <div className='btn-alertas'>
+                  <Link>
                   <img src={Sino} />
-                  <label>Alertas</label>
+                    <label>Alertas</label>
+                  </Link>
                 </div>
 
+                
                 <div className='btn-conta'>
+                  <Link>
                   <img src={user} />
-                  <label>Perfil</label>
+                    <label>Perfil</label>
+                  </Link>
                 </div>
 
 
