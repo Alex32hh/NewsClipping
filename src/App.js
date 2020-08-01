@@ -9,6 +9,7 @@ import facebook from './images/facebook.png';
 import logo from './images/Logotipo_Manifexto2018.png';
 import Sino from './images/bell.png';
 import user from './images/user.png';
+import search from './images/search.png';
 import { Button, Alert } from 'react-bootstrap';
 
 function App() {
@@ -19,21 +20,26 @@ function App() {
 
         <div className='topBar'>
           <div className="barcontent">
+
             <div className='leftside'>
               <Link> <item>Contactos</item></Link>
               <Link> <item>Contactos</item></Link>
               <Link> <item>Contactos</item></Link>
               <Link> <item>Contactos</item></Link>
             </div>
+
             <div className='rightside'>
-              <Link to="1"> <item><img src={whatsapp} /></item></Link>
-              <Link to="2"> <item><img src={youtube} /></item></Link>
-              <Link to="3"> <item><img src={facebook} /></item></Link>
-              <Link to="4"> <item><img src={instagram} /></item></Link>
+              <Link to="1"> <item><img src={whatsapp} /> </item></Link>
+              <Link to="2"> <item><img src={youtube} /> </item></Link>
+              <Link to="3"> <item><img src={facebook} /> </item></Link>
+              <Link to="4"> <item><img src={instagram} /> </item></Link>
             </div>
+
           </div>
+
         </div>
 
+ 
         <header>
           <nav>
             <div className='divide'>
@@ -43,8 +49,30 @@ function App() {
             <div className='divide'>
             
               <div className='center-box'>
-                <div className='center-top'>1</div>
-                <div className='center-bottom'>2</div>
+                
+                <div className='center-top'>
+
+                  <div></div>
+
+                  <div>
+                    <button>
+                      <img src={search} />
+                  </button>
+                  </div>
+
+                  <div>
+                     <input type='text' placeholder="Pesquisar..." />
+                  </div>
+
+                  <div></div>
+                </div>
+
+                <div className='center-bottom'>
+                  <div>1</div>
+                  <div>3</div>
+                  <div>4</div>
+                </div>
+
               </div>
               
             </div>

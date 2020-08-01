@@ -76,19 +76,52 @@ nav{
   row-gap: 5px; */
 }
 
-.center-box .center-top{
+ .center-top{
   background: #fff;
-  height: 4.7vh;
+  height: 5.3vh;
   text-align: left;
   grid-column: 1/4;
+  display: grid;
+  grid-template-columns: .3fr 0fr 1fr .3fr;
+  row-gap:5px;
 }
 
-.center-box .center-bottom{
+ .center-top div button{
+  border: none;
+  border-left: 1px solid rgb(194, 191, 191);
+  border-top: 1px solid rgb(194, 191, 191);
+  border-bottom: 1px solid rgb(194, 191, 191);
+  height: 5vh;
+  background-color: rgb(255, 255, 255);
+  margin: 5px 0px;
+  border-radius: 4px 0px 4px 0px;
+ }
+ 
+.center-top div button img{
+    width:4vh;
+    padding:10px;
+ }
+
+ .center-top div input{
+  border: none;
+  margin: 5px 0px;
+  height: 5vh;
+  border-radius: 0px 4px 0px 4px;
+  padding-left: 10px;
+  background-color: rgb(236, 236, 236);
+  width: 100%;
+ }
+
+.center-bottom{
   background: rgb(153, 28, 28);
-  height: 3vh;
-  text-align: left;
-  grid-column: 1/4;
+  height:2.5vh;
+  text-align:left;
+  grid-column:1/4;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
 }
+
+
 
 .btn-alertas{
   padding-top: 10px;
