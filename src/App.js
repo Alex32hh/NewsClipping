@@ -10,7 +10,11 @@ import logo from './images/Logotipo_Manifexto2018.png';
 import Sino from './images/bell.png';
 import user from './images/user.png';
 import search from './images/search.png';
-import { Button, Alert } from 'react-bootstrap';
+
+import print from './images/print.png';
+import plusSignal from './images/plus2.png';
+import settings from './images/gear2.png';
+// import { Button, Alert } from 'react-bootstrap';
 
 function App() {
   return (
@@ -68,9 +72,16 @@ function App() {
                 </div>
 
                 <div className='center-bottom'>
-                  <div>1</div>
-                  <div>3</div>
-                  <div>4</div>
+                  <div></div>
+                  
+                  <div className='catego-items'>
+                    <div><img src={plusSignal} /> Dizer</div>
+                    <div><img src={plusSignal} /> Dizer</div>
+                    <div><img src={settings} /> Dizer</div>
+                    <div><img src={print} /> Imprimir</div>
+                  </div>
+
+                  <div></div>
                 </div>
 
               </div>

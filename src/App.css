@@ -10,17 +10,18 @@
 /* definicoes Globais */
 
 label{
-  color: #fff;
+  color: rgb(0, 0, 0);
   text-decoration: none;
+  font-size: 11px;
 }
 label:hover{
   color: aqua;
   cursor: pointer;
 }
 
-body{
+/* body{
     background: #000;
-}
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -84,7 +85,7 @@ nav{
   display: grid;
   grid-template-columns: .3fr 0fr 1fr .3fr;
   row-gap:5px;
-}
+ }
 
  .center-top div button{
   border: none;
@@ -94,7 +95,7 @@ nav{
   height: 5vh;
   background-color: rgb(255, 255, 255);
   margin: 5px 0px;
-  border-radius: 4px 0px 4px 0px;
+  border-radius: 4px 0px 0px 4px;
  }
  
 .center-top div button img{
@@ -106,28 +107,48 @@ nav{
   border: none;
   margin: 5px 0px;
   height: 5vh;
-  border-radius: 0px 4px 0px 4px;
+  border-radius: 0px 4px 4px 0px;
   padding-left: 10px;
   background-color: rgb(236, 236, 236);
   width: 100%;
  }
 
 .center-bottom{
-  background: rgb(153, 28, 28);
   height:2.5vh;
   text-align:left;
   grid-column:1/4;
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:.28fr 1fr .28fr;
+
 }
 
+/* .center-bottom div{
+  background-color: #61dafb;
+} */
+
+.catego-items{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+}
+
+.catego-items div{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-right: 8px;
+}
+.catego-items div img{
+  width: 15px;
+}
 
 
 .btn-alertas{
   padding-top: 10px;
   width: 6vh;
   grid-column: 5/6;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 .btn-alertas img{
@@ -138,7 +159,7 @@ nav{
   padding-top: 10px;
   width: 6vh;
   grid-column: 6/7;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 .btn-conta img{
