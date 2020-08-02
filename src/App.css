@@ -15,8 +15,16 @@ label{
   font-size: 11px;
 }
 label:hover{
-  color: aqua;
+  color:rgb(57, 209, 127);
   cursor: pointer;
+}
+.link-hover-manifexto{
+  color: #000;
+}
+.link-hover-manifexto:hover{
+   color:rgb(57, 209, 127);
+  cursor: pointer;
+  text-decoration: none !important;
 }
 
 /* body{
@@ -37,12 +45,15 @@ label:hover{
   max-width: 140vh;
   display: grid;
   margin: auto;
+  padding-top: 100px;
 }
 
 header{
   width: 100%;
-  height: 75px;
+
   border-bottom: 1px solid rgb(219, 219, 219);
+  position: fixed;
+  background: #fff;
 }
 
 nav{
@@ -139,10 +150,7 @@ nav{
   color: #000;
   text-decoration: none;
 }
-.catego-items div:hover{
-  color: rgb(7, 245, 46);
-  text-decoration: none !important;
-}
+
 .catego-items div img{
   width: 15px;
 }
@@ -216,13 +224,15 @@ item img{
 
 .news-box{
   width: 100%;
-  height: 180px;
+  min-height: 180px;
+  max-height: 220px;
   /* background: #61dafb; */
   display: grid;
   grid-template-columns: .5fr 1fr;
   column-gap: 10px;
   border: 1px solid rgb(231, 229, 229);
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .news-box div{
@@ -235,14 +245,19 @@ item img{
 .news-box-description{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1.5fr 1fr 3fr;
+  grid-template-rows: .7fr 0fr 0fr;
   border-radius: 0px !important;
-  column-gap: 5px;
-  row-gap: 5px;
 }
 .news-box-description div{
-  background-color: rgb(112, 112, 112);
+  /* background-color: rgb(112, 112, 112); */
   border-radius: 0px !important;
+  text-align: left;
+  padding: 6px;
+}
+
+.news-box-description-title{
+  font-size: 16px;
+  font-weight: bold;
 }
 
 main{

@@ -3,7 +3,7 @@ import Home from './screens/home';
 import serverPg from './backend/server';
 import axios from 'axios';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, useLocation} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, useLocation, Redirect } from "react-router-dom";
 import instagram from './images/instagram.png';
 import whatsapp from './images/whatsapp.png';
 import youtube from './images/youtube.png';
@@ -23,16 +23,32 @@ export default function App() {
 
   var path;
   useEffect(() => {
-     path = window.location.pathname;
-  },[]);
+    path = window.location.pathname;
+  }, []);
 
-
+  const pub = ['nova publiicacao', 'Angola novo ministro das telecomi=unicacoes', 'sucesso', 'enviado', 'loangaminidade', 'nova publiicacao', 'Angola novo ministro das telecomi=unicacoes', 'sucesso', 'enviado', 'loangaminidade', 'nova publiicacao', 'Angola novo ministro das telecomi=unicacoes', 'sucesso', 'enviado', 'loangaminidade'];
+  const items = [];
+  
+  for (const [index, value] of pub.entries()) {
+    items.push(
+      <div className='news-box'>
+        <div style={{ background: "url(https://lh3.googleusercontent.com/ZtJiWgDaXWdRf4zl7tR6z1MG84cCer9ugRftVSbtnaEpNbHs0m8KP2Aq9FisiwMjp1VQESn9we-qUVJW0zvU)" }} >
+        </div>
+        <div className='news-box-description' key={index}>
+          <div className='news-box-description-title'><Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div className="link-hover-manifexto">{value}</div></Link></div>
+          <div>E-global noticias em português - Há 1 hora</div>
+          <div>Um relatório do Afrobarometer, Um relatório do Afrobarometer, Um relatório do Afrobarometer, liderado pela Ovilongwa – Estudos de Opinião Pública, concluiu que a Polícia Nacional de Angola é a instituição mais corrupta...</div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <Router>
       <div className="App">
 
-        <div className='topBar'>
+        <header>
+                  <div className='topBar'>
           <div className="barcontent">
             <div className='leftside'>
               <Link> <item>Contactos</item></Link>
@@ -50,19 +66,17 @@ export default function App() {
 
           </div>
 
-        </div>
-
-
-        <header>
+          </div>
+          
           <nav>
             <div className='divide'>
               <img src={logo} className='image-logo' />
             </div>
 
             <div className='divide'>
-            
+
               <div className='center-box'>
-                
+
                 <div className='center-top'>
 
                   <div></div>
@@ -70,11 +84,11 @@ export default function App() {
                   <div>
                     <button>
                       <img src={search} />
-                  </button>
+                    </button>
                   </div>
 
                   <div>
-                     <input type='text' placeholder="Pesquisar..." />
+                    <input type='text' placeholder="Pesquisar..." />
                   </div>
 
                   <div></div>
@@ -82,36 +96,36 @@ export default function App() {
 
                 <div className='center-bottom'>
                   <div></div>
-                  
+
                   <div className='catego-items'>
-                    <Link>  <div> <img src={plusSignal} /> Criar Alerta</div></Link>
-                    <Link><div><img src={settings} /> Opções</div></Link>
-                    <Link> <div><img src={share} /> Partilhar</div></Link>
-                    <Link><div><img src={print} /> Imprimir</div></Link>
+                    <Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div className='link-hover-manifexto'> <img src={plusSignal} /> Criar Alerta</div></Link>
+                    <Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div className='link-hover-manifexto'><img src={settings} /> Opções</div></Link>
+                    <Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div className='link-hover-manifexto'><img src={share} /> Partilhar</div></Link>
+                    <Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div className='link-hover-manifexto'><img src={print} /> Imprimir</div></Link>
                   </div>
 
                   <div></div>
                 </div>
 
               </div>
-              
+
             </div>
 
             <div className='divide'>
               <div className='images-items'>
-               
-                
+
+
                 <div className='btn-alertas'>
                   <Link to='/alertas'>
-                  <img src={Sino} />
+                    <img src={Sino} />
                     <label>Alertas</label>
                   </Link>
                 </div>
 
-                
+
                 <div className='btn-conta'>
                   <Link to='/perfil'>
-                  <img src={user} />
+                    <img src={user} />
                     <label>Perfil</label>
                   </Link>
                 </div>
@@ -128,20 +142,8 @@ export default function App() {
           <Route path="/alertas" component={corpo} />
           <Route path="/perfil" component={contact} />
           <Route path="/Server" component={serverPg} />
-          
-          <aside>
 
-        <div className='news-box'>
-              <div style={{background:"url(https://lh3.googleusercontent.com/ZtJiWgDaXWdRf4zl7tR6z1MG84cCer9ugRftVSbtnaEpNbHs0m8KP2Aq9FisiwMjp1VQESn9we-qUVJW0zvU)"}} >
-              </div>
-              <div className='news-box-description'>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-        </div>
-
-          </aside>
+          <aside>{items}</aside>
 
           <footer></footer>
 
