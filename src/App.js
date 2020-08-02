@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Home from './screens/home';
+import serverPg from './backend/server';
+import axios from 'axios';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import instagram from './images/instagram.png';
@@ -14,14 +16,27 @@ import search from './images/search.png';
 import print from './images/print.png';
 import plusSignal from './images/plus2.png';
 import settings from './images/gear2.png';
-// import { Button, Alert } from 'react-bootstrap';
+import share from './images/share.png';
+import Popup from "reactjs-popup";
+import { Button, Alert } from 'react-bootstrap';
 
-function App() {
+export default function App() {
+
+  const [books, setBooks] = useState(null);
+
+  const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
+
+  const fetchData = async () => {
+    const response = await axios.get(apiURL)
+    setBooks(response.data)
+    alert(setBooks.name);
+    
+  }
+  
   return (
-
     <Router>
       <div className="App">
-
+      
         <div className='topBar'>
           <div className="barcontent">
 
@@ -33,17 +48,17 @@ function App() {
             </div>
 
             <div className='rightside'>
-              <Link to="1"> <item><img src={whatsapp} /> </item></Link>
-              <Link to="2"> <item><img src={youtube} /> </item></Link>
-              <Link to="3"> <item><img src={facebook} /> </item></Link>
-              <Link to="4"> <item><img src={instagram} /> </item></Link>
+              <Link to="1"> <item><img src={whatsapp} /></item> </Link>
+              <Link to="2"> <item><img src={youtube} /></item>  </Link>
+              <Link to="3"> <item><img src={facebook} /></item> </Link>
+              <Link to="4"> <item><img src={instagram} /></item></Link>
             </div>
 
           </div>
 
         </div>
 
- 
+
         <header>
           <nav>
             <div className='divide'>
@@ -75,10 +90,10 @@ function App() {
                   <div></div>
                   
                   <div className='catego-items'>
-                    <div><img src={plusSignal} /> Dizer</div>
-                    <div><img src={plusSignal} /> Dizer</div>
-                    <div><img src={settings} /> Dizer</div>
-                    <div><img src={print} /> Imprimir</div>
+                    <Link>  <div> <img src={plusSignal} /> Criar Alerta</div></Link>
+                    <Link><div><img src={settings} /> Opções</div></Link>
+                    <Link> <div><img src={share} /> Partilhar</div></Link>
+                    <Link><div><img src={print} /> Imprimir</div></Link>
                   </div>
 
                   <div></div>
@@ -93,7 +108,7 @@ function App() {
                
                 
                 <div className='btn-alertas'>
-                  <Link>
+                  <Link to='/alertas'>
                   <img src={Sino} />
                     <label>Alertas</label>
                   </Link>
@@ -101,7 +116,7 @@ function App() {
 
                 
                 <div className='btn-conta'>
-                  <Link>
+                  <Link to='/perfil'>
                   <img src={user} />
                     <label>Perfil</label>
                   </Link>
@@ -113,10 +128,13 @@ function App() {
           </nav>
         </header>
 
+
         <div className='container'>
           <Route exact path="/" component={Home} />
-          <Route path="/corpo" component={corpo} />
-          <Route path="/contact" component={contact} />
+          <Route path="/alertas" component={corpo} />
+          <Route path="/perfil" component={contact} />
+          <Route path="/Server" component={serverPg} />
+          
           <aside></aside>
           <footer></footer>
 
@@ -124,7 +142,6 @@ function App() {
 
       </div>
     </Router>
-
   );
 }
 
@@ -132,14 +149,12 @@ function App() {
 
 const corpo = () => (
   <div className='content'>
-    body
+    alertas
   </div>
 );
 
 const contact = () => (
   <div className='content'>
-    contactos
+    perfil
   </div>
 );
-
-export default App;
