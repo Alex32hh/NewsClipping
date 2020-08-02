@@ -26,6 +26,11 @@ label:hover{
   cursor: pointer;
   text-decoration: none !important;
 }
+.content-title{
+  float: left;
+  padding: 10px 0px;
+  font-size: 17px;
+}
 
 /* body{
     background: #000;
@@ -45,7 +50,7 @@ label:hover{
   max-width: 140vh;
   display: grid;
   margin: auto;
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 header{
@@ -260,17 +265,11 @@ item img{
   font-weight: bold;
 }
 
-main{
-  
-   
-}
+
 footer{
  
 
 }
-
-
-
 
 
 @keyframes App-logo-spin {

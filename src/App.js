@@ -1,9 +1,12 @@
 import React, { Component, useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Link, useLocation, Redirect } from "react-router-dom";
 import Home from './screens/home';
-import serverPg from './backend/server';
+import Scrollable from './screens/scrollabs';
+
+import results from './screens/results';
 import axios from 'axios';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, useLocation, Redirect } from "react-router-dom";
+import './mainpage.css';
 import instagram from './images/instagram.png';
 import whatsapp from './images/whatsapp.png';
 import youtube from './images/youtube.png';
@@ -21,53 +24,35 @@ import Popup from "reactjs-popup";
 import { Button, Alert } from 'react-bootstrap';
 export default function App() {
 
-  var path;
-  useEffect(() => {
-    path = window.location.pathname;
-  }, []);
+  const path = window.location.pathname;
 
-  const pub = ['nova publiicacao', 'Angola novo ministro das telecomi=unicacoes', 'sucesso', 'enviado', 'loangaminidade', 'nova publiicacao', 'Angola novo ministro das telecomi=unicacoes', 'sucesso', 'enviado', 'loangaminidade', 'nova publiicacao', 'Angola novo ministro das telecomi=unicacoes', 'sucesso', 'enviado', 'loangaminidade'];
-  const items = [];
-  
-  for (const [index, value] of pub.entries()) {
-    items.push(
-      <div className='news-box'>
-        <div style={{ background: "url(https://lh3.googleusercontent.com/ZtJiWgDaXWdRf4zl7tR6z1MG84cCer9ugRftVSbtnaEpNbHs0m8KP2Aq9FisiwMjp1VQESn9we-qUVJW0zvU)" }} >
-        </div>
-        <div className='news-box-description' key={index}>
-          <div className='news-box-description-title'><Link style={{ color: 'inherit', textDecoration: 'inherit' }}><div className="link-hover-manifexto">{value}</div></Link></div>
-          <div>E-global noticias em português - Há 1 hora</div>
-          <div>Um relatório do Afrobarometer, Um relatório do Afrobarometer, Um relatório do Afrobarometer, liderado pela Ovilongwa – Estudos de Opinião Pública, concluiu que a Polícia Nacional de Angola é a instituição mais corrupta...</div>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <Router>
       <div className="App">
+        {path == "/" ? Home() :
+          <>
+          <header>
+          <div className='topBar'>
+            <div className="barcontent">
+              <div className='leftside'>
+                <Link> <item>Contactos</item></Link>
+                <Link> <item>Contactos</item></Link>
+                <Link> <item>Contactos</item></Link>
+                <Link> <item>Contactos</item></Link>
+              </div>
 
-        <header>
-                  <div className='topBar'>
-          <div className="barcontent">
-            <div className='leftside'>
-              <Link> <item>Contactos</item></Link>
-              <Link> <item>Contactos</item></Link>
-              <Link> <item>Contactos</item></Link>
-              <Link> <item>Contactos</item></Link>
-            </div>
+              <div className='rightside'>
+                <Link to="1"> <item><img src={whatsapp} /></item> </Link>
+                <Link to="2"> <item><img src={youtube} /></item>  </Link>
+                <Link to="3"> <item><img src={facebook} /></item> </Link>
+                <Link to="4"> <item><img src={instagram} /></item></Link>
+              </div>
 
-            <div className='rightside'>
-              <Link to="1"> <item><img src={whatsapp} /></item> </Link>
-              <Link to="2"> <item><img src={youtube} /></item>  </Link>
-              <Link to="3"> <item><img src={facebook} /></item> </Link>
-              <Link to="4"> <item><img src={instagram} /></item></Link>
             </div>
 
           </div>
 
-          </div>
-          
           <nav>
             <div className='divide'>
               <img src={logo} className='image-logo' />
@@ -134,21 +119,20 @@ export default function App() {
               </div>
             </div>
           </nav>
-        </header>
+          </header>
+          
+          <div className='container'>
+            <Route exact path="/" component={Home} />
+            <Route path="/alertas" component={corpo} />
+            <Route path="/perfil" component={contact} />
+            <Route path="/Scrollable" component={Scrollable} />
+            <Route path="/results" component={results} />
+            <footer></footer>
 
-
-        <div className='container'>
-          <Route exact path="/" component={Home} />
-          <Route path="/alertas" component={corpo} />
-          <Route path="/perfil" component={contact} />
-          <Route path="/Server" component={serverPg} />
-
-          <aside>{items}</aside>
-
-          <footer></footer>
-
-        </div>
-
+          </div>
+          </>
+}
+     
       </div>
     </Router>
   );
