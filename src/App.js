@@ -1,9 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import Home from './screens/home';
 import serverPg from './backend/server';
 import axios from 'axios';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, useLocation} from "react-router-dom";
 import instagram from './images/instagram.png';
 import whatsapp from './images/whatsapp.png';
 import youtube from './images/youtube.png';
@@ -19,27 +19,21 @@ import settings from './images/gear2.png';
 import share from './images/share.png';
 import Popup from "reactjs-popup";
 import { Button, Alert } from 'react-bootstrap';
-
 export default function App() {
 
-  const [books, setBooks] = useState(null);
+  var path;
+  useEffect(() => {
+     path = window.location.pathname;
+  },[]);
 
-  const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
 
-  const fetchData = async () => {
-    const response = await axios.get(apiURL)
-    setBooks(response.data)
-    alert(setBooks.name);
-    
-  }
-  
+
   return (
     <Router>
       <div className="App">
-      
+
         <div className='topBar'>
           <div className="barcontent">
-
             <div className='leftside'>
               <Link> <item>Contactos</item></Link>
               <Link> <item>Contactos</item></Link>
@@ -135,7 +129,20 @@ export default function App() {
           <Route path="/perfil" component={contact} />
           <Route path="/Server" component={serverPg} />
           
-          <aside></aside>
+          <aside>
+
+        <div className='news-box'>
+              <div style={{background:"url(https://lh3.googleusercontent.com/ZtJiWgDaXWdRf4zl7tR6z1MG84cCer9ugRftVSbtnaEpNbHs0m8KP2Aq9FisiwMjp1VQESn9we-qUVJW0zvU)"}} >
+              </div>
+              <div className='news-box-description'>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+        </div>
+
+          </aside>
+
           <footer></footer>
 
         </div>
