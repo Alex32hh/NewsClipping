@@ -66,8 +66,8 @@
 
   .center-input-box{
     display: grid;
-    grid-template-columns: 1fr .15fr 1fr 1fr;
-    grid-template-rows: .2fr .2fr .2fr .2fr;
+    grid-template-columns: 1fr 1.7fr 1fr;
+    grid-template-rows: .2fr .2fr .2fr;
     /* column-gap: 5px; */
     /* background: #f00; */
   }
@@ -103,3 +103,12 @@
     border-top: 1px solid rgb(187, 187, 187);
     border-bottom: 1px solid  rgb(187, 187, 187);
   }
+
+  .form-list{
+      padding: 10px;
+      display: grid;
+      grid-template-columns: .15fr 1fr;
+  }
+    .form-list div{
+
+    }
